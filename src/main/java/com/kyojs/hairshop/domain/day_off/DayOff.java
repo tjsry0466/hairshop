@@ -3,6 +3,7 @@ package com.kyojs.hairshop.domain.day_off;
 import com.kyojs.hairshop.domain.BaseTimeEntity;
 import com.kyojs.hairshop.domain.designer.Designer;
 import com.kyojs.hairshop.domain.shop.Shop;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -37,4 +38,14 @@ public class DayOff extends BaseTimeEntity {
 
     @Column(length = 20, nullable = false)
     private String end_day;
+
+    @Builder
+    public DayOff(Designer designer, Shop shop, Integer type, Integer day_of_week, String start_day, String end_day) {
+        this.designer = designer;
+        this.shop = shop;
+        this.type = type;
+        this.day_of_week = day_of_week;
+        this.start_day = start_day;
+        this.end_day = end_day;
+    }
 }

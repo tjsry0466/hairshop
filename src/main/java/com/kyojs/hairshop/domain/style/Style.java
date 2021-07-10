@@ -3,6 +3,7 @@ package com.kyojs.hairshop.domain.style;
 import com.kyojs.hairshop.domain.BaseTimeEntity;
 import com.kyojs.hairshop.domain.designer.Designer;
 import com.kyojs.hairshop.domain.style_type.StyleType;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -35,4 +36,13 @@ public class Style extends BaseTimeEntity {
 
     @Column(length = 50, nullable = false)
     private String etc;
+
+    @Builder
+    public Style(Designer designer, StyleType styleType, Gender gender, String optional, String etc) {
+        this.designer = designer;
+        this.styleType = styleType;
+        this.gender = gender;
+        this.optional = optional;
+        this.etc = etc;
+    }
 }

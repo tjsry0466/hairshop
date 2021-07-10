@@ -2,6 +2,7 @@ package com.kyojs.hairshop.domain.designer;
 
 import com.kyojs.hairshop.domain.BaseTimeEntity;
 import com.kyojs.hairshop.domain.user.User;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -32,4 +33,13 @@ public class Designer extends BaseTimeEntity {
 
     @Column(length = 50, nullable = false)
     private String info;
+
+    @Builder
+    public Designer(User user, String name, String photo, Integer career, String info) {
+        this.user = user;
+        this.name = name;
+        this.photo = photo;
+        this.career = career;
+        this.info = info;
+    }
 }
