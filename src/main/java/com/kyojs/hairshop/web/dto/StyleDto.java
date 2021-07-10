@@ -30,6 +30,22 @@ public class StyleDto {
     }
 
     @Getter
+    public static class ListResponse{
+        private Designer designer;
+        private StyleType styleType;
+        private Gender gender;
+        private String optional;
+
+        @Builder
+        public ListResponse(Designer designer, StyleType styleType, Gender gender, String optional) {
+            this.designer = designer;
+            this.styleType = styleType;
+            this.gender = gender;
+            this.optional = optional;
+        }
+    }
+
+    @Getter
     @NoArgsConstructor
     public static class SaveRequest{
         private Designer designer;

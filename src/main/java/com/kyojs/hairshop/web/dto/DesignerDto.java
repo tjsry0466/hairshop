@@ -29,6 +29,22 @@ public class DesignerDto {
     }
 
     @Getter
+    public static class ListResponse {
+        private String name;
+        private String photo;
+        private Integer career;
+        private String info;
+
+        @Builder
+        public ListResponse(String name, String photo, Integer career, String info) {
+            this.name = name;
+            this.photo = photo;
+            this.career = career;
+            this.info = info;
+        }
+    }
+
+    @Getter
     @NoArgsConstructor
     public static class SaveRequest{
         private User user;

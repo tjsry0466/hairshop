@@ -5,6 +5,7 @@ import com.kyojs.hairshop.domain.designer.Designer;
 import com.kyojs.hairshop.domain.shop.Shop;
 import com.kyojs.hairshop.domain.style.Style;
 import com.kyojs.hairshop.domain.user.User;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -56,4 +57,19 @@ public class Review extends BaseTimeEntity {
 
     @Column(length = 200, nullable = false)
     private String thumbnail;
+
+    @Builder
+    public Review(User user, Style style, Shop shop, Designer designer, Integer type, String title, String content, Float rating, Integer status, String tags, String thumbnail) {
+        this.user = user;
+        this.style = style;
+        this.shop = shop;
+        this.designer = designer;
+        this.type = type;
+        this.title = title;
+        this.content = content;
+        this.rating = rating;
+        this.status = status;
+        this.tags = tags;
+        this.thumbnail = thumbnail;
+    }
 }
