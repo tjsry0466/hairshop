@@ -8,7 +8,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-public class UsersDto {
+public class UserDto {
 
     @Getter
     public static class Response{
@@ -39,7 +39,28 @@ public class UsersDto {
 
     @Getter
     public static class ListResponse{
+        private String email;
+        private String name;
+        private Gender gender;
+        private String birth;
+        private Role role;
+        private String level;
+        private Integer status;
+        private String tel;
+        private String address;
 
+        @Builder
+        public ListResponse(User user) {
+            this.email = user.getEmail();
+            this.name = user.getName();
+            this.gender = user.getGender();
+            this.birth = user.getBirth();
+            this.role = user.getRole();
+            this.level = user.getLevel();
+            this.status = user.getStatus();
+            this.tel = user.getTel();
+            this.address = user.getAddress();
+        }
     }
 
     @Getter

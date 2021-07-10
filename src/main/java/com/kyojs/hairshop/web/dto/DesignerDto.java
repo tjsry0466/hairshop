@@ -36,11 +36,11 @@ public class DesignerDto {
         private String info;
 
         @Builder
-        public ListResponse(String name, String photo, Integer career, String info) {
-            this.name = name;
-            this.photo = photo;
-            this.career = career;
-            this.info = info;
+        public ListResponse(Designer designer) {
+            this.name = designer.getName();
+            this.photo = designer.getPhoto();
+            this.career = designer.getCareer();
+            this.info = designer.getInfo();
         }
     }
 

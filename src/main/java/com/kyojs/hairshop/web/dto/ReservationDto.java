@@ -35,11 +35,11 @@ public class ReservationDto {
         private Integer status;
 
         @Builder
-        public ListResponse(User user, Style style, Integer price, Integer status) {
-            this.user = user;
-            this.style = style;
-            this.price = price;
-            this.status = status;
+        public ListResponse(Reservation reservation) {
+            this.user = reservation.getUser();
+            this.style = reservation.getStyle();
+            this.price = reservation.getPrice();
+            this.status = reservation.getStatus();
         }
     }
 

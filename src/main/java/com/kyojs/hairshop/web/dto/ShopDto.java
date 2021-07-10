@@ -51,15 +51,15 @@ public class ShopDto {
         private String opening_time;
         private String closing_time;
 
-        public ListResponse(Long id, String name, String info, String address, String tel, String add_info, String opening_time, String closing_time) {
-            this.id = id;
-            this.name = name;
-            this.info = info;
-            this.address = address;
-            this.tel = tel;
-            this.add_info = add_info;
-            this.opening_time = opening_time;
-            this.closing_time = closing_time;
+        public ListResponse(Shop shop) {
+            this.id = shop.getId();
+            this.name = shop.getName();
+            this.info = shop.getInfo();
+            this.address = shop.getAddress();
+            this.tel = shop.getTel();
+            this.add_info = shop.getAdd_info();
+            this.opening_time = shop.getOpening_time();
+            this.closing_time = shop.getClosing_time();
         }
     }
 

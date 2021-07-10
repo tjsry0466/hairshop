@@ -37,11 +37,11 @@ public class StyleDto {
         private String optional;
 
         @Builder
-        public ListResponse(Designer designer, StyleType styleType, Gender gender, String optional) {
-            this.designer = designer;
-            this.styleType = styleType;
-            this.gender = gender;
-            this.optional = optional;
+        public ListResponse(Style style) {
+            this.designer = style.getDesigner();
+            this.styleType = style.getStyleType();
+            this.gender = style.getGender();
+            this.optional = style.getOptional();
         }
     }
 

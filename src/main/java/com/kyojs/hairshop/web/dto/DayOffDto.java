@@ -31,6 +31,27 @@ public class DayOffDto {
     }
 
     @Getter
+    public static class ListResponseP{
+        private Long id;
+        private Designer designer;
+        private Shop shop;
+        private Integer type;
+        private Integer day_of_week;
+        private String start_day;
+        private String end_day;
+
+        public ListResponseP(DayOff dayOff) {
+            this.id = dayOff.getId();
+            this.designer = dayOff.getDesigner();
+            this.shop = dayOff.getShop();
+            this.type = dayOff.getType();
+            this.day_of_week = dayOff.getDay_of_week();
+            this.start_day = dayOff.getStart_day();
+            this.end_day = dayOff.getEnd_day();
+        }
+    }
+
+    @Getter
     @NoArgsConstructor
     public static class SaveRequest{
         private Designer designer;

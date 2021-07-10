@@ -43,7 +43,31 @@ public class ReviewDto {
 
     @Getter
     public static class ListResponse{
+        private Long id;
+        private User user;
+        private Style style;
+        private Shop shop;
+        private Designer designer;
+        private Integer type;
+        private String content;
+        private Float rating;
+        private Integer status;
+        private String tags;
+        private String thumbnail;
 
+        public ListResponse(Review review) {
+            this.id = review.getId();
+            this.user = review.getUser();
+            this.style = review.getStyle();
+            this.shop = review.getShop();
+            this.designer = review.getDesigner();
+            this.type = review.getType();
+            this.content = review.getContent();
+            this.rating = review.getRating();
+            this.status = review.getStatus();
+            this.tags = review.getTags();
+            this.thumbnail = review.getThumbnail();
+        }
     }
 
     @Getter
