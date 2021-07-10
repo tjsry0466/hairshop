@@ -42,4 +42,13 @@ public class Designer extends BaseTimeEntity {
         this.career = career;
         this.info = info;
     }
+
+    public void update(String name, String photo, Integer career, String info) {
+        this.name = name;
+        this.photo = photo;
+        this.career = career;
+        this.info = info;
+    }
+
+
 }
