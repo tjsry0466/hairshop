@@ -45,4 +45,11 @@ public class Style extends BaseTimeEntity {
         this.optional = optional;
         this.etc = etc;
     }
+    
+    public void update(StyleType styleType, Gender gender, String optional, String etc) {
+        this.styleType = styleType;
+        this.gender = gender;
+        this.optional = optional;
+        this.etc = etc;
+    }
 }

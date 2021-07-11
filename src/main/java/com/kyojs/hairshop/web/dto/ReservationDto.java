@@ -72,6 +72,11 @@ public class ReservationDto {
     @Getter
     @NoArgsConstructor
     public static class UpdateRequest{
+        private Integer status;
 
+        @Builder
+        public UpdateRequest(Integer status) {
+            this.status = status;
+        }
     }
 }

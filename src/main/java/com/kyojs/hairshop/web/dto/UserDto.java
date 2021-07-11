@@ -94,6 +94,7 @@ public class UserDto {
                     .username(username)
                     .passwd(passwd)
                     .email(email)
+                    .name(name)
                     .gender(gender)
                     .role(role)
                     .birth(birth)

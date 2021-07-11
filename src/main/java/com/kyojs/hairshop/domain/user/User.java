@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.ColumnDefault;
 
 import javax.persistence.*;
 
@@ -41,11 +42,11 @@ public class User extends BaseTimeEntity {
     @Column(length = 10, nullable = false)
     private String birth;
 
-    @Column(length = 10, nullable = false, columnDefinition="default 1")
-    private String level;
+    @Column(length = 10)
+    private String level = "1";
 
-    @Column(length = 5, nullable = false, columnDefinition="default 1")
-    private Integer status;
+    @Column(length = 5)
+    private Integer status = 1;
 
     @Column(length = 30, nullable = false)
     private String tel;

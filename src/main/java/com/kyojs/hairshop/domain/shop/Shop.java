@@ -41,10 +41,10 @@ public class Shop extends BaseTimeEntity {
     @Column(length = 100, nullable = false)
     private String location;
 
-    @Column(length = 5, nullable = false, columnDefinition = "default 1")
+    @Column(nullable = false, columnDefinition = "varchar(5) default 1")
     private Integer level;
 
-    @Column(length = 5, nullable = false, columnDefinition = "default 1")
+    @Column(nullable = false, columnDefinition = "varchar(5) default 1")
     private Integer status;
 
     @Column(length = 255, nullable = false)
@@ -62,6 +62,19 @@ public class Shop extends BaseTimeEntity {
     @Builder
     public Shop(User user, String name, String email, String info, String address, String tel, String location, String add_info, String opening_time, String closing_time, String opening_day) {
         this.user = user;
+        this.name = name;
+        this.email = email;
+        this.info = info;
+        this.address = address;
+        this.tel = tel;
+        this.location = location;
+        this.add_info = add_info;
+        this.opening_time = opening_time;
+        this.closing_time = closing_time;
+        this.opening_day = opening_day;
+    }
+
+    public void update(String name, String email, String info, String address, String tel, String location, String add_info, String opening_time, String closing_time, String opening_day){
         this.name = name;
         this.email = email;
         this.info = info;

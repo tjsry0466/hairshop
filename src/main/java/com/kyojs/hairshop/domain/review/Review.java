@@ -72,4 +72,14 @@ public class Review extends BaseTimeEntity {
         this.tags = tags;
         this.thumbnail = thumbnail;
     }
+
+    public void update( Integer type, String title, String content, Float rating, Integer status, String tags, String thumbnail){
+        this.type = type;
+        this.title = title;
+        this.content = content;
+        this.rating = rating;
+        this.status = status;
+        this.tags = tags;
+        this.thumbnail = thumbnail;
+    }
 }

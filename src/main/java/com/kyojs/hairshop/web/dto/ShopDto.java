@@ -109,4 +109,33 @@ public class ShopDto {
                     .build();
         }
     }
+
+    @Getter
+    @NoArgsConstructor
+    public static class UpdateRequest {
+        private String name;
+        private String email;
+        private String info;
+        private String address;
+        private String tel;
+        private String location;
+        private String add_info;
+        private String opening_time;
+        private String closing_time;
+        private String opening_day;
+
+        @Builder
+        public UpdateRequest(String name, String email, String info, String address, String tel, String location, String add_info, String opening_time, String closing_time, String opening_day) {
+            this.name = name;
+            this.email = email;
+            this.info = info;
+            this.address = address;
+            this.tel = tel;
+            this.location = location;
+            this.add_info = add_info;
+            this.opening_time = opening_time;
+            this.closing_time = closing_time;
+            this.opening_day = opening_day;
+        }
+    }
 }

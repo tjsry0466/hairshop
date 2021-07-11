@@ -14,7 +14,7 @@ public class DayOffDto {
         private Long id;
         private Designer designer;
         private Shop shop;
-        private Integer type;
+        private Integer optional;
         private Integer day_of_week;
         private String start_day;
         private String end_day;
@@ -23,7 +23,7 @@ public class DayOffDto {
             this.id = dayOff.getId();
             this.designer = dayOff.getDesigner();
             this.shop = dayOff.getShop();
-            this.type = dayOff.getType();
+            this.optional = dayOff.getOptional();
             this.day_of_week = dayOff.getDay_of_week();
             this.start_day = dayOff.getStart_day();
             this.end_day = dayOff.getEnd_day();
@@ -31,20 +31,20 @@ public class DayOffDto {
     }
 
     @Getter
-    public static class ListResponseP{
+    public static class ListResponse{
         private Long id;
         private Designer designer;
         private Shop shop;
-        private Integer type;
+        private Integer optional;
         private Integer day_of_week;
         private String start_day;
         private String end_day;
 
-        public ListResponseP(DayOff dayOff) {
+        public ListResponse(DayOff dayOff) {
             this.id = dayOff.getId();
             this.designer = dayOff.getDesigner();
             this.shop = dayOff.getShop();
-            this.type = dayOff.getType();
+            this.optional = dayOff.getOptional();
             this.day_of_week = dayOff.getDay_of_week();
             this.start_day = dayOff.getStart_day();
             this.end_day = dayOff.getEnd_day();
@@ -56,16 +56,16 @@ public class DayOffDto {
     public static class SaveRequest{
         private Designer designer;
         private Shop shop;
-        private Integer type;
+        private Integer optional;
         private Integer day_of_week;
         private String start_day;
         private String end_day;
 
         @Builder
-        public SaveRequest(Designer designer, Shop shop, Integer type, Integer day_of_week, String start_day, String end_day) {
+        public SaveRequest(Designer designer, Shop shop, Integer optional, Integer day_of_week, String start_day, String end_day) {
             this.designer = designer;
             this.shop = shop;
-            this.type = type;
+            this.optional = optional;
             this.day_of_week = day_of_week;
             this.start_day = start_day;
             this.end_day = end_day;
@@ -75,7 +75,7 @@ public class DayOffDto {
             return DayOff.builder()
                     .designer(designer)
                     .shop(shop)
-                    .type(type)
+                    .optional(optional)
                     .day_of_week(day_of_week)
                     .start_day(start_day)
                     .end_day(end_day)
@@ -86,15 +86,15 @@ public class DayOffDto {
     @Getter
     @NoArgsConstructor
     public static class UpdateRequest{
-        private Integer type;
+        private Integer optional;
         private Integer day_of_week;
         private String start_day;
         private String end_day;
 
         @Builder
 
-        public UpdateRequest(Integer type, Integer day_of_week, String start_day, String end_day) {
-            this.type = type;
+        public UpdateRequest(Integer optional, Integer day_of_week, String start_day, String end_day) {
+            this.optional = optional;
             this.day_of_week = day_of_week;
             this.start_day = start_day;
             this.end_day = end_day;

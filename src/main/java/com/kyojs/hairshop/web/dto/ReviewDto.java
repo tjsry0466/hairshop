@@ -26,18 +26,18 @@ public class ReviewDto {
         private String tags;
         private String thumbnail;
 
-        public Response(Response response) {
-            this.id = response.getId();
-            this.user = response.getUser();
-            this.style = response.style;
-            this.shop = response.getShop();
-            this.designer = response.designer;
-            this.type = response.getType();
-            this.content = response.content;
-            this.rating = response.rating;
-            this.status = response.status;
-            this.tags = response.tags;
-            this.thumbnail = response.thumbnail;
+        public Response(Review review) {
+            this.id = review.getId();
+            this.user = review.getUser();
+            this.style = review.getStyle();
+            this.shop = review.getShop();
+            this.designer = review.getDesigner();
+            this.type = review.getType();
+            this.content = review.getContent();
+            this.rating = review.getRating();
+            this.status = review.getStatus();
+            this.tags = review.getTags();
+            this.thumbnail = review.getThumbnail();
         }
     }
 
@@ -78,6 +78,7 @@ public class ReviewDto {
         private Shop shop;
         private Designer designer;
         private Integer type;
+        private String title;
         private String content;
         private Float rating;
         private Integer status;
@@ -85,12 +86,13 @@ public class ReviewDto {
         private String thumbnail;
 
         @Builder
-        public SaveRequest(User user, Style style, Shop shop, Designer designer, Integer type, String content, Float rating, Integer status, String tags, String thumbnail) {
+        public SaveRequest(User user, Style style, Shop shop, Designer designer, Integer type, String title, String content, Float rating, Integer status, String tags, String thumbnail) {
             this.user = user;
             this.style = style;
             this.shop = shop;
             this.designer = designer;
             this.type = type;
+            this.title = title;
             this.content = content;
             this.rating = rating;
             this.status = status;
@@ -105,6 +107,42 @@ public class ReviewDto {
                     .shop(shop)
                     .designer(designer)
                     .type(type)
+                    .title(title)
+                    .content(content)
+                    .rating(rating)
+                    .status(status)
+                    .tags(tags)
+                    .thumbnail(thumbnail)
+                    .build();
+        }
+    }
+
+    @Getter
+    @NoArgsConstructor
+    public static class UpdateReqeust{
+        private Integer type;
+        private String title;
+        private String content;
+        private Float rating;
+        private Integer status;
+        private String tags;
+        private String thumbnail;
+
+        @Builder
+        public UpdateReqeust(Integer type, String title, String content, Float rating, Integer status, String tags, String thumbnail) {
+            this.type = type;
+            this.title = title;
+            this.content = content;
+            this.rating = rating;
+            this.status = status;
+            this.tags = tags;
+            this.thumbnail = thumbnail;
+        }
+
+        public Review toEntity() {
+            return Review.builder()
+                    .type(type)
+                    .title(title)
                     .content(content)
                     .rating(rating)
                     .status(status)

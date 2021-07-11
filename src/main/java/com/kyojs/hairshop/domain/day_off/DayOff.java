@@ -28,7 +28,7 @@ public class DayOff extends BaseTimeEntity {
     private Shop shop;
 
     @Column(length = 5, nullable = false)
-    private Integer type;
+    private Integer optional;
 
     @Column(length = 20, nullable = false)
     private Integer day_of_week;
@@ -40,10 +40,17 @@ public class DayOff extends BaseTimeEntity {
     private String end_day;
 
     @Builder
-    public DayOff(Designer designer, Shop shop, Integer type, Integer day_of_week, String start_day, String end_day) {
+    public DayOff(Designer designer, Shop shop, Integer optional, Integer day_of_week, String start_day, String end_day) {
         this.designer = designer;
         this.shop = shop;
-        this.type = type;
+        this.optional = optional;
+        this.day_of_week = day_of_week;
+        this.start_day = start_day;
+        this.end_day = end_day;
+    }
+
+    public void update(Integer optional, Integer day_of_week, String start_day, String end_day) {
+        this.optional = optional;
         this.day_of_week = day_of_week;
         this.start_day = start_day;
         this.end_day = end_day;
