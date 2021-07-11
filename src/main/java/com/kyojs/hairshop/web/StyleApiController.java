@@ -1,9 +1,7 @@
 package com.kyojs.hairshop.web;
 
 import com.kyojs.hairshop.service.StyleService;
-import com.kyojs.hairshop.service.UserService;
 import com.kyojs.hairshop.web.dto.StyleDto;
-import com.kyojs.hairshop.web.dto.UserDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

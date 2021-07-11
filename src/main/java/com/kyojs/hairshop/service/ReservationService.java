@@ -32,11 +32,11 @@ public class ReservationService {
         return id;
     }
 
-    public ReservationDto.Reponse findById(Long id) {
+    public ReservationDto.Response findById(Long id) {
         Reservation entity = reservationRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("해당 헤어샵이 없습니다. id = " + id));
 
-        return new ReservationDto.Reponse(entity);
+        return new ReservationDto.Response(entity);
     }
 
     @Transactional

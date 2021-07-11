@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 public class ReservationDto {
 
     @Getter
-    public static class Reponse{
+    public static class Response{
         private Long id;
         private User user;
         private Style style;
@@ -18,7 +18,7 @@ public class ReservationDto {
         private Integer status;
 
 
-        public Reponse(Reservation reservation) {
+        public Response(Reservation reservation) {
             this.id = reservation.getId();
             this.user = reservation.getUser();
             this.style = reservation.getStyle();
